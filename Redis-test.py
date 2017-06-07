@@ -1,20 +1,20 @@
 import redis
 #r = redis.Redis(host='123.12.148.95', port='5379')
-#r = redis.Redis(host='123.12.148.95', port='15379', password='ABCDEFG1231LQ4L')
+r = redis.Redis(host='redis-10385.c15.us-east-1-4.ec2.cloud.redislabs.com', port='10385', password='ol2PPKvWdReZQXu2')
 
 
 ######################
 #### WORKING WITH KEYS
-#r.set('mykey','PiedPiper')
+r.set('mykey','PiedPiper')
 #### Single key
-#print r.get('mykey')
-#print r.exists('mykey')
-#r.delete('mykey')
+print r.get('mykey')
+print r.exists('mykey')
+r.delete('mykey')
 #### Multiple keys at once
-#r.mset({'mykey1':'value1', 'mykey2':123})
+r.mset({'mykey1':'value1', 'mykey2':123})
 #### Handy way to create and increment a counter
-#print r.incr('mycounter') # Increment by one
-#print r.incrby('mycounter',10) # Increment by any number
+print r.incr('mycounter') # Increment by one
+print r.incrby('mycounter',10) # Increment by any number
 
 #######################
 #### WORKING WITH LISTS
