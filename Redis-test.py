@@ -1,6 +1,6 @@
 import redis
 #r = redis.Redis(host='123.12.148.95', port='5379')
-r = redis.Redis(host='redis-10385.c15.us-east-1-4.ec2.cloud.redislabs.com', port='10385', password='ol2PPKvWdReZQXu2')
+r = redis.Redis(host='redis-10385.c15.us-east-1-4.ec2.cloud.redislabs.com', port='10385', password='xxxx')
 
 
 ######################
