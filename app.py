@@ -2,7 +2,7 @@ import os
 import redis
 from flask import Flask, render_template, redirect, request, url_for, make_response
 
-r = redis.Redis(host='redis-10385.c15.us-east-1-4.ec2.cloud.redislabs.com', port='10385', password='ol2PPKvWdReZQXu2')
+r = redis.Redis(host='redis-10385.c15.us-east-1-4.ec2.cloud.redislabs.com', port='10385', password='xxxx')
 
 app = Flask(__name__)
 
@@ -14,15 +14,17 @@ def survey():
 @app.route('/suthankyou.html', methods=['POST'])
 def suthankyou():
 
-    ## This is how you grab the contents from the form
+	## This is how you grab the contents from the form
 	entity = request.form['entity']
 	state = request.form['state']
 	f = request.form['feedback']
-    ## Now you can now do someting with variable "f"
+	## Now you can now do someting with variable "f"
 ##	r.rpush('mylist', entity)
 ##	r.rpush('mylist', state)
 ##	r.rpush('mylist', f)
-	r.hset('myhash',{'entity': entity, 'state': state, 'feedback': f })	
+	r.hset('myhash','entity', entity)
+	r.hset('myhash', 'state',state)
+	r.hset('myhash','feedback',f )	
 #### Display the length of the list
 	resp = """
     <h3> - THANKS FOR TAKING THE SURVEY - </h3>

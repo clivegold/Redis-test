@@ -7,14 +7,14 @@ r = redis.Redis(host='redis-10385.c15.us-east-1-4.ec2.cloud.redislabs.com', port
 #### WORKING WITH KEYS
 r.set('mykey','PiedPiper')
 #### Single key
-print r.get('mykey')
-print r.exists('mykey')
+print (r.get('mykey'))
+print (r.exists('mykey'))
 r.delete('mykey')
 #### Multiple keys at once
 r.mset({'mykey1':'value1', 'mykey2':123})
 #### Handy way to create and increment a counter
-print r.incr('mycounter') # Increment by one
-print r.incrby('mycounter',10) # Increment by any number
+print (r.incr('mycounter')) # Increment by one
+print (r.incrby('mycounter',10)) # Increment by any number
 
 #######################
 #### WORKING WITH LISTS
